@@ -1,4 +1,4 @@
-# Few-Shot Rare Disease Detection 🧬 
+# Few-Shot Rare Disease Detection 
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-CPU%2FGPU-EE4C2C.svg)
@@ -8,13 +8,13 @@
 
 A novel NLP research project utilizing few-shot learning to detect rare diseases within unstructured clinical text (EHRs). This framework achieves high accuracy with only 5-10 examples per disease, bridging the gap between state-of-the-art NLP and practical clinical application.
 
----
 
-## 📖 Overview
+
+## Overview
 
 There are over 7,000 rare diseases affecting ~300 million people globally, yet most have fewer than 100 documented clinical cases. Traditional supervised Deep Learning models fail because they require thousands of annotated examples. **This project solves this by using Few-Shot Learning, enabling accurate rare disease detection from clinical notes using only a handful of examples (5-10 per disease).**
 
-### ✨ Key Contributions
+### Key Contributions
 
 - **Novel Methodology**: Adapts modern few-shot methods (**SetFit**, **Prototypical Networks**) specifically for the medical domain using specialized encoders (`BioBERT`, `PubMedBERT`).
 - **Unstructured Data**: Moves beyond structured phenotypic data (HPO) to process raw, messy, unstructured clinical notes.
@@ -22,9 +22,9 @@ There are over 7,000 rare diseases affecting ~300 million people globally, yet m
 - **Clinical Interpretability**: Integrates LIME and attention-weighted visualizations to provide transparent, explainable predictions for clinicians.
 - **Accessibility**: Highly optimized, CPU-friendly implementation enabling rapid deployment for newly discovered diseases.
 
----
 
-## 🧠 Methodology & Architecture
+
+## Methodology & Architecture
 
 The system pipeline is composed of three core modules:
 
@@ -34,9 +34,9 @@ The system pipeline is composed of three core modules:
    - **Prototypical Networks**: Computes class prototypes (mean vectors) and classifies via Euclidean distance.
 3. **Interpretability Layer**: Extracts attention weights to map model predictions back to specific patient symptoms and lab results.
 
----
 
-## 🚀 Getting Started
+
+## Getting Started
 
 ### Prerequisites
 
@@ -59,9 +59,9 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install transformers sentence-transformers setfit datasets pandas numpy scikit-learn shap lime matplotlib seaborn
 ```
 
----
 
-## 📊 Dataset Preparation
+
+## Dataset Preparation
 
 The pipeline operates on episodes sampled from clinical datasets (e.g., MIMIC-III).
 
@@ -71,9 +71,9 @@ The pipeline operates on episodes sampled from clinical datasets (e.g., MIMIC-II
 
 > *Note: MIMIC-III data requires credentialed access via [PhysioNet](https://mimic.mit.edu/).*
 
----
 
-## 💻 Usage
+
+## Usage
 
 ### 1. Zero-Shot Baseline
 To establish a baseline using raw cosine similarity:
@@ -99,9 +99,9 @@ Generate LIME explanations and attention maps for a prediction:
 python scripts/interpretability.py
 ```
 
----
 
-## 📈 Expected Results
+
+##  Expected Results
 
 | Method | 5-way 5-shot Accuracy | 10-way 5-shot Accuracy |
 | :--- | :---: | :---: |
@@ -110,50 +110,48 @@ python scripts/interpretability.py
 | **Prototypical Nets (Ours)** | **80-85%** | **70-75%** |
 | *Fine-tuned (Upper Bound)* | *90-95%* | *85-90%* |
 
----
 
-## 🗺️ Project Roadmap (What I Did & Will Do)
 
-### Phase 1: Research & Baseline (Completed ✅)
+## Project Roadmap (What I Did & Will Do)
+
+### Phase 1: Research & Baseline (Completed )
 - [x] Conducted comprehensive literature review (Matching Networks, SetFit, PET, PubMedBERT).
 - [x] Defined the architectural pipeline and formalized the N-way K-shot episodic formulation.
 - [x] Implemented data preprocessing script for MIMIC-III clinical notes.
 - [x] Built and evaluated the Zero-Shot `BioBERT` baseline.
 
-### Phase 2: Core Algorithm Implementation (Completed ✅)
+### Phase 2: Core Algorithm Implementation (ongoing)
 - [x] Implemented **Prototypical Networks** from scratch using PyTorch.
 - [x] Implemented the **SetFit** contrastive learning pipeline mapped to medical encoders.
 - [x] Designed the episodic evaluation framework with Macro F1, Precision, and Recall metrics.
 
-### Phase 3: Interpretability & Validation (In Progress 🚧)
+### Phase 3: Interpretability & Validation (In Progress )
 - [ ] Integrate SHAP and LIME for patient-level prediction explainability.
 - [ ] Render attention-weight visualizations mapping back to specific tokens (e.g., 'elevated CK').
 - [ ] Conduct detailed Error Analysis (Most confused disease pairs).
 
-### Phase 4: Benchmarking & Publication (Upcoming 🚀)
+### Phase 4: Benchmarking & Publication (Upcoming )
 - [ ] Run massive ablation studies (varying K-shots, N-ways, and Encoders).
 - [ ] Perform statistical significance testing (Paired t-test, Wilcoxon).
 - [ ] Compile comprehensive benchmark dataset for rare disease NLP.
 - [ ] Draft final paper targeting **NeurIPS / EMNLP 2025**.
 
----
 
-## 📚 Core References
+
+## Core References
 
 1. **SetFit**: Tunstall et al., "Efficient Few-Shot Learning Without Prompts." NeurIPS 2022.
 2. **Prototypical Networks**: Snell et al., "Prototypical Networks for Few-shot Learning." NeurIPS 2017.
 3. **Medical Encoders**: Michalopoulos et al., "UMLSBERT: Clinical Domain Knowledge Augmentation." NAACL 2021.
 4. **Prior Work (Structured Data)**: Groza et al., "Zero/Few-shot for Rare Disease Phenotyping." J Biomed Semantics 2022.
 
----
 
-## 🤝 Let's Connect!
+## Let's Connect!
 
 I am actively seeking **Machine Learning / AI Research Internships**. If my research aligns with your company's mission in healthcare, NLP, or foundational AI, I'd love to chat!
 
-- **Email**: `[Your Email Address]`
-- **LinkedIn**: `[Your LinkedIn Profile]`
-- **Portfolio**: `[Your Personal Website]`
+- **Email**: `[laxmiprashasthi@gmail.com]`
+- **LinkedIn**: `[https://www.linkedin.com/in/chilukuri-laxmi-prashasthi-a55a63323/]`
 
----
-*Built with ❤️ for the advancement of clinical AI.*
+
+
